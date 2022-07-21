@@ -16,15 +16,17 @@
     />
     <title>Studio</title>
   </head>
-  <body>
+  <body class="agency-link">
     <header class="menu container section">
+      <a class="logo-menu" href="./index.html"
+        >Web<span class="logo-color-black">Studio</span></a
+      >
       <nav class="menu-links">
-        <a class="logo-menu" href="./index.html"
-          >Web<span class="logo-color-black">Studio</span></a
+        <a class="menu-link agency-link" href="./index.html">Agencja</a>
+        <a class="menu-link portfolio-link" href="./portfolio.html"
+          >Portfolio</a
         >
-        <a class="menu-link" href="#">Agencja</a>
-        <a class="menu-link" href="./portfolio.html">Portfolio</a>
-        <a class="menu-link" href="#">Kontakt</a>
+        <a class="menu-link" href="#">Kontakty</a>
       </nav>
       <ul class="menu-contacts">
         <li>
@@ -64,7 +66,20 @@
             EFEKTYWNE ROZWIĄZANIA <br />
             DLA WASZEGO BIZNESU
           </h1>
-          <button class="main-button">Zamów usługe</button>
+          <button data-modal-open class="main-button">Zamów usługe</button>
+        </div>
+        <div data-modal class="modal-backdrop is-hidden">
+          <div class="modal">
+            <svg data-modal-close class="modal-x" width="30" height="30">
+              <use
+                width="8"
+                height="8"
+                x="11"
+                y="11"
+                href="./images/sprite.svg#x"
+              ></use>
+            </svg>
+          </div>
         </div>
       </section>
       <section class="main-list section">
@@ -142,29 +157,32 @@
       <section class="container section what-we-do">
         <h2>Czym się zajmujemy</h2>
         <ul class="what-we-do-pictures">
-          <li>
+          <li class="what-we-do-picture">
             <img
               src="./images/comp1.jpg"
               alt="Komputer 1"
               width="370"
               height="294"
             />
+            <div class="what-we-do-text"><p>APLIKACJE KOMPUTEROWE</p></div>
           </li>
-          <li>
+          <li class="what-we-do-picture">
             <img
               src="./images/comp2.jpg"
-              alt="Komputer 2"
+              alt="Komputer 1"
               width="370"
               height="294"
             />
+            <div class="what-we-do-text"><p>APLIKACJE MOBILNE</p></div>
           </li>
-          <li>
+          <li class="what-we-do-picture">
             <img
               src="./images/comp3.jpg"
-              alt="Komputer 3"
+              alt="Komputer 1"
               width="370"
               height="294"
             />
+            <div class="what-we-do-text"><p>ROZWIĄZANIA GRAFICZNE</p></div>
           </li>
         </ul>
       </section>
@@ -568,5 +586,6 @@
         </ul>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
