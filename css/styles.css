@@ -196,6 +196,20 @@ img {
   z-index: 1;
   top: 0px;
   background-color: rgba(0, 0, 0, 0.2);
+  /* animation-name: modal;
+  animation-duration: 5s;
+  animation-timing-function: linear; */
+  transition: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
+}
+.modal-backdrop + .is-hidden {
+  transition: none;
+}
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 .modal {
   position: relative;
@@ -204,10 +218,9 @@ img {
   transform: translateX(-50%) translateY(-50%);
   width: 528px;
   height: 581px;
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-  /* overflow: auto; */
   background-color: #fff;
 }
 .modal-x {
@@ -216,12 +229,9 @@ img {
   border-radius: 50%;
   background-color: #fff;
   fill: #000000;
-  transition-property: fill, background-color;
+  transition-property: color, background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  animation-name: modalClose;
-  animation-duration: 5s;
-  animation-timing-function: linear;
 }
 .modal-x:hover,
 .modal-x:focus {
@@ -229,22 +239,17 @@ img {
   fill: #fff;
   background-color: #2196f3;
 }
-.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-@keyframes modal {
+
+/* @keyframes modal {
   0% {
     opacity: 0;
     visibility: hidden;
   }
-  /* 50% {transform: scale(0.5);} */
-  100% {
+    100% {
     opacity: 1;
     visibility: visible;
   }
-}
+} 
 @keyframes modalClose {
   0% {
     opacity: 1;
@@ -254,16 +259,14 @@ img {
     opacity: 0;
     visibility: hidden;
   }
-}
+}  */
 .list {
-  /* height: 251px; */
   list-style-type: none;
   display: flex;
   justify-content: space-between;
 }
 .list-item {
   width: 270px;
-  /* height: 120px; */
 }
 .list-picture {
   width: 270px;
@@ -478,7 +481,6 @@ img {
 }
 .portfolio-button {
   padding: 6px 22px;
-  /* height: 38px; */
   background-color: #f5f4fa;
   font-weight: 600;
   font-size: 16px;
@@ -509,16 +511,12 @@ img {
 }
 .portfolio-list-item {
   width: 370px;
-  /* height: 404px; */
   outline: 1px solid #eeeeee;
   list-style-type: none;
   transition-property: box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* .portfolio-list-item:hover {
-  transition: box-shadow, 250ms;
-} */
 .image-and-text {
   width: 370px;
   height: 294px;
